@@ -18,7 +18,7 @@ new Vue({
     // 사용자가 로그아웃, 비밀번호 등을 변경했을 때 처리.
     // pUserInfo : 유저정보를 담아두는 사용자 정의 객체
     firebase.auth().onAuthStateChanged((pUserInfo) => {
-      if (pUserInfo) {
+      if (pUserInfo !== null) {
         //이미 로그인 되어있었는지  상태를 파악해서 처리
         store.dispatch("fnDoLoginAuto", pUserInfo);
       }
